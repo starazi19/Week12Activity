@@ -37,6 +37,6 @@ predicate calls(Function caller, Function callee) {
 
 from Function test, Function x
 where isTest(test) and
-      calls+(test, x) and
+      calls(test, x) and
       x.getName() = "pressActionKey"
 select test, "Test calling pressActionKey: " + test.getName()
