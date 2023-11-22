@@ -35,7 +35,7 @@ predicate calls(Function caller, Function callee) {
  * Holds if function named pressActionKey
  */
 
-from Function test Function x
+from Function test, Function x
 where isTest(test) and
       calls+(test, x) and
       x.getName() = "pressActionKey"
