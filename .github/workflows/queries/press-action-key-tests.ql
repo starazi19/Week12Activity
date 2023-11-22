@@ -31,8 +31,12 @@ predicate calls(Function caller, Function callee) {
   )
 }
 
-from Function test, Function pressActionKey
+/** 
+ * Holds if function named pressActionKey
+ */
+
+from Function test Function x
 where isTest(test) and
-      calls(test, pressActionKey) and
-      pressActionKey.getName() = "pressActionKey"
+      calls+(test, x) and
+      x.getName() = "pressActionKey"
 select test, "Test calling pressActionKey: " + test.getName()
